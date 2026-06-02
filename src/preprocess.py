@@ -18,12 +18,13 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 # TODO — fill these lists from your EDA
-NUMERIC_FEATURES: list[str] = ["int_rate", "dti", "revol_util"
-    # e.g. "loan_amnt", "int_rate", "annual_inc", ...
+NUMERIC_FEATURES: list[str] = [
+    "loan_amnt", "int_rate", "installment", "annual_inc",
+    "dti", "delinq_2yrs", "fico_range_low", "revol_util",
 ]
 CATEGORICAL_FEATURES: list[str] = [
-        "term", "grade", "home_ownership", "purpose"
-    # e.g. "term", "grade", "home_ownership", "purpose", ...
+    "term", "grade", "emp_length", "home_ownership",
+    "verification_status", "purpose",
 ]
 TARGET_COLUMN: str = "loan_status"
 TARGET_MAPPING: dict[str, int] = {"Fully Paid": 0, "Charged Off": 1}
