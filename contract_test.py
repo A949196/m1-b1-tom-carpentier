@@ -69,13 +69,10 @@ if __name__ == "__main__":
     # ⚠️ Le `.drop(columns=["loan_status"])` est essentiel : le pipeline
     #    attend les features uniquement, pas la cible.
 
-    expected_first_proba: list[float] | None = None  # TODO — colle ici les 2 floats du print
-
-    if expected_first_proba is None:
-        raise NotImplementedError(
-            "Renseigne `expected_first_proba` à partir du snippet du notebook "
-            "ci-dessus, puis relance ce script."
-        )
+    expected_first_proba: list[float] | None = [
+        0.8312378239973387,   # P(Fully Paid)  — référence notebook
+        0.16876217600266116,  # P(Charged Off) — référence notebook
+    ]
 
     x_holdout = pd.read_csv(
         Path(__file__).parent / "data" / "lending_club_holdout.csv"
